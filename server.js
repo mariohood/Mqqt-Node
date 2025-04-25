@@ -24,13 +24,13 @@ aedes.on('clientDisconnect', (client) => {
   console.log("Client disconnected: ", client.id);
 })
 
-//aedes.on('publish', (packet, client) => {
-//console.log(`Mensagem recebida do cliente ${client} - Tópico : ${packet.topic} => ${packet.payload.toString()}`);
-//});
+aedes.on('publish', (packet, client) => {
+console.log(`Mensagem recebida do cliente ${client} - Tópico : ${packet.topic} => ${packet.payload.toString()}`)
+});
 
-aedes.on('publish', async function (packet, client) {
-  console.log('Client \x1b[31m' + (client ? client.id : 'BROKER_' + aedes.id) + '\x1b[0m has published', packet.payload.toString(), 'on', packet.topic, 'to broker', aedes.id)
-})
+//aedes.on('publish', async function (packet, client) {
+// console.log('Client \x1b[31m' + (client ? client.id : 'BROKER_' + aedes.id) + '\x1b[0m has published', packet.payload.toString(), 'on', packet.topic, 'to broker', aedes.id)
+//})
 
 
 ;
